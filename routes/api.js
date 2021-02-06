@@ -1,16 +1,16 @@
 var router = require("express").Router();
 var app = express();
 
-app.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/notes.html"));
+app.get("/api/notes", (req, res) => {
+    res.getNotes()
 });
 
-app.post("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/notes.html"));
+app.post("/api/notes", (req, res) => {
+    res.saveNote(data)
 });
 
 app.delete("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/notes.html"));
+    res.deleteNote(id)
 });
 
 app.get("/api/characters", function(req, res) {
