@@ -44,7 +44,7 @@ router.get("/notes", (req, res) => {
 
 ## Deployed Link
 
-* [See Live Site]()
+* [See Live Site](https://my-note-tracker.herokuapp.com/)
 
 ## License
 
