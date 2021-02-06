@@ -1,18 +1,21 @@
 var router = require("express").Router();
 var app = express();
+var note = "/"
 
+// create path for routes
 app.get("/api/notes", (req, res) => {
     res.getNotes()
 });
 
+// create path for saving notes
 app.post("/api/notes", (req, res) => {
-    res.saveNote(data)
+    res.saveNote(note)
 });
 
+// create path for deleting notes
 app.delete("/notes", (req, res) => {
     res.deleteNote(id)
 });
 
-app.get("/api/characters", function(req, res) {
-    return res.json(characters);
-});
+// export routes
+module.exports=router
