@@ -1,4 +1,4 @@
-# note-taker
+# Note Tacker
 Create an application that can be used to write, save, and delete notes.
 
 ===========
@@ -6,40 +6,21 @@ Create an application that can be used to write, save, and delete notes.
 
 <br>
 
-## Get Notes
+## Save Notes
 
 ```
-getNotes() {
-    return this.readNotes().then(data => {
-        let addedNotes;
-        try{
-            addedNotes = [].concat(JSON.parse(data))
-        }
-
-        catch(err){
-            addedNotes = []
-        }
-
-        return addedNotes 
-    })
-}
+app.post("/api/notes", (req, res) => {
+    return res.json(note)
+});
 ```
 <br>
 
-## Add Notes
+## Delete Notes
 
 ```
-addNote(note){
-    const {title, text} = note
-
-    if (!title || !text) {
-        console.log('must put title and text')
-    }
-
-    const newNote = {title, text, id: uuid()}
-
-    return this.getNotes().then(data => [...data, newNote]).then(updatedData => this.writeNotes(updatedData)).then(() => newNote)
-}
+app.delete("/notes", (req, res) => {
+    return res.json(id)
+});
 ```
 <br>
 
@@ -63,7 +44,7 @@ router.get("/notes", (req, res) => {
 
 ## Deployed Link
 
-* [See Live Site](https://note-takerucb.herokuapp.com//)
+* [See Live Site]()
 
 ## License
 

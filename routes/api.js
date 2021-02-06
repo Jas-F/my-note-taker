@@ -2,7 +2,6 @@ var express = require("express");
 var router = require("express").Router();
 var app = express();
 
-
 // create path for routes
 app.get("/api/notes", (req, res) => {
    return res.json()
