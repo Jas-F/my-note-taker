@@ -4,17 +4,17 @@ var note = "/"
 
 // create path for routes
 app.get("/api/notes", (req, res) => {
-    res.getNotes()
+   return res.json()
 });
 
 // create path for saving notes
 app.post("/api/notes", (req, res) => {
-    res.saveNote(note)
+    return res.json(note)
 });
 
 // create path for deleting notes
 app.delete("/notes", (req, res) => {
-    res.deleteNote(id)
+    return res.json(id)
 });
 
 // export routes
