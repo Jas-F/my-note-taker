@@ -1,9 +1,8 @@
-var express = require("express");
 var router = require("express").Router();
-var app = express();
+var db = require("../db/db.json")
 
 // create path for routes
-app.get("/api/notes", (req, res) => {
+router.get("/api/notes", (req, res) => {
    return res.json()
 });
 
@@ -25,7 +24,7 @@ app.get("/api/notes", (req, res) => {
 //   });
 
 // create path for deleting notes
-app.delete("/notes", (req, res) => {
+router.delete("/notes", (req, res) => {
     return res.json(id)
 });
 
