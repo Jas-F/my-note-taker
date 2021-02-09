@@ -10,7 +10,7 @@ app.use(express.static('public'))
 // require both routes
 var api = require("./routes/api")
 var html = require("./routes/html")
-// app.use(api)
+app.use(api)
 app.use(html)
 
 // add alert for successful port connection

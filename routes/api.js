@@ -3,7 +3,7 @@ var db = require("../db/db.json")
 
 // create path for routes
 router.get("/api/notes", (req, res) => {
-   return res.json()
+   return res.json(db)
 });
 
 // create path for saving notes
