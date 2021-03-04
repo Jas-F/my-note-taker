@@ -11,7 +11,12 @@ router.get("/api/notes", (req, res) => {
 router.post("/api/notes", (req,res) => {
     console.log(req.body)
     // creating object for json file
-    {}
+    var notes = {
+        id:shortid.generate(),
+        title: req.body.title,
+        text: req.body.text
+    }
+    console.log(notes)
 });
 
 // create path for saving notes
