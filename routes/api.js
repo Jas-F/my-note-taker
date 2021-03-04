@@ -4,6 +4,7 @@ var db = require("../db/db.json");
 const shortid = require('shortid');
 //  requiring fs to write files
 const fs = require("fs");
+const { stringify } = require("querystring");
 
 // create path for routes
 router.get("/api/notes", (req, res) => {
@@ -24,7 +25,13 @@ router.post("/api/notes", (req,res) => {
     db.push(notes)
     // rewrite db with new array
     // insert route to write file to db.json
-    fs.writeFile("../db/db.json")
+    // stringify object
+    fs.writeFile("../db/db.json", JSON.stringify(db), (err) => {
+        if (err) throw err;
+        // send response to front end when working
+        res.json(db)
+
+    })
 });
 
 
