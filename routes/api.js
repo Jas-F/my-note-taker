@@ -26,7 +26,7 @@ router.post("/api/notes", (req,res) => {
     // rewrite db with new array
     // insert route to write file to db.json
     // stringify object
-    fs.writeFile("../db/db.json", JSON.stringify(db), (err) => {
+    fs.writeFile("./db/db.json", JSON.stringify(db), (err) => {
         if (err) throw err;
         // send response to front end when working
         res.json(db)
