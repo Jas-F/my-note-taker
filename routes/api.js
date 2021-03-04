@@ -1,12 +1,22 @@
 var router = require("express").Router();
-var db = require("../db/db.json")
+var db = require("../db/db.json");
+// requiring shortid npm package
+const shortid = require('shortid');
 
 // create path for routes
 router.get("/api/notes", (req, res) => {
    return res.json(db)
 });
 
+router.post("/api/notes", (req,res) => {
+    console.log(req.body)
+    // creating object for json file
+    {}
+});
+
 // create path for saving notes
+// add npm package to create id's for notes
+
 // app.post("/api/notes", function(req, res) {
 //     // req.body hosts is equal to the JSON post sent from the user
 //     // This works because of our body parsing middleware
@@ -23,8 +33,10 @@ router.get("/api/notes", (req, res) => {
 //     res.json(newcharacter);
 //   });
 
+
+
 // create path for deleting notes
-router.delete("/notes", (req, res) => {
+router.delete("/api/notes/:id", (req, res) => {
     return res.json(id)
 });
 
