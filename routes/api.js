@@ -2,6 +2,8 @@ var router = require("express").Router();
 var db = require("../db/db.json");
 // requiring shortid npm package
 const shortid = require('shortid');
+//  requiring fs to write files
+const fs = require("fs");
 
 // create path for routes
 router.get("/api/notes", (req, res) => {
@@ -17,7 +19,14 @@ router.post("/api/notes", (req,res) => {
         text: req.body.text
     }
     console.log(notes)
+
+    // push notes into db in order to display newly write note on the page
+    db.push(notes)
+    // rewrite db with new array
+    // insert route to write file to db.json
+    fs.writeFile("../db/db.json")
 });
+
 
 // create path for saving notes
 // add npm package to create id's for notes
