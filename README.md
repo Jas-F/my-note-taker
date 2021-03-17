@@ -18,7 +18,17 @@ app.post("/api/notes", (req, res) => {
 ## Delete Notes
 
 ```
-app.delete("/notes", (req, res) => {
+router.delete("/api/notes/:id", (req, res) => {
+    // create an const to get notes id
+    // delete note from array with filter method
+    // code grabs id of clicked note then redefines database to equal everything that does not have the id of the clicked note
+    const id = req.params.id
+    
+    db = db.filter(function(notes) {
+        return notes.id !== id
+    })
+
+    console.log(req.params.id)
     return res.json(id)
 });
 ```
