@@ -8,14 +8,14 @@ const { stringify } = require("querystring");
 
 // create path for routes
 router.get("/api/notes", (req, res) => {
-   return res.json(db)
+    return res.json(db)
 });
 
-router.post("/api/notes", (req,res) => {
+router.post("/api/notes", (req, res) => {
     console.log(req.body)
     // creating object for json file
     var notes = {
-        id:shortid.generate(),
+        id: shortid.generate(),
         title: req.body.title,
         text: req.body.text
     }
@@ -42,15 +42,15 @@ router.post("/api/notes", (req,res) => {
 //     // req.body hosts is equal to the JSON post sent from the user
 //     // This works because of our body parsing middleware
 //     var newNote = .;
-  
+
 //     // Using a RegEx Pattern to remove spaces from newCharacter
 //     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
 //     newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
-  
+
 //     console.log(newcharacter);
-  
+
 //     characters.push(newcharacter);
-  
+
 //     res.json(newcharacter);
 //   });
 
@@ -58,8 +58,12 @@ router.post("/api/notes", (req,res) => {
 
 // create path for deleting notes
 router.delete("/api/notes/:id", (req, res) => {
+    // create an const to get notes id
+    // delete note from array with filter method
+   
+    console.log(req.params.id)
     return res.json(id)
 });
 
 // export routes
-module.exports=router
+module.exports = router
