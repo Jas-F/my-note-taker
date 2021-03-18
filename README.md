@@ -54,6 +54,10 @@ router.get("/notes", (req, res) => {
 
 ## Deployed Link
 
+## References 
+
+*https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array
+
 * [See Live Site](https://my-note-tracker.herokuapp.com/)
 
 ## License
